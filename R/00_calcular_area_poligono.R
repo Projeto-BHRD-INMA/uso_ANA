@@ -12,14 +12,15 @@ library(rgdal)
 library(raster)
 
 ## load your polygone shapefile
-uso_solo <- readOGR(dsn = "F:/Dados_ArcGis/BHRD/Uso_Ocupao_do_Solo_Bacia_do_Rio_Doce", layer = "uph_sao_jose_uso")
+uso_solo <- readOGR(dsn = "./data/ANA", layer = "uso_solo_bhrd_ANA")
 
 #################################
 
 #Adicionar uma nova coluna do arquivo acima ($area2), para calcular a área do polígono (area(uso_solo))
-uso_solo$area2 <- area(uso_solo)
+uso_solo$area_ha <- area(uso_solo)/10000
+uso_solo$area_km2 <- area(uso_solo)/1e+6
 
 head(uso_solo)
 
 #Salvar o arquivo com a nova coluna
-writeOGR(uso_solo, "F:/Dados_ArcGis/BHRD/Uso_Ocupao_do_Solo_Bacia_do_Rio_Doce", "uph_sao_jose_uso2", driver="ESRI Shapefile")
+writeOGR(uso_solo, "./data/ANA", "uso_solo_bhrd_ANA", driver="ESRI Shapefile", overwrite_layer = TRUE)
