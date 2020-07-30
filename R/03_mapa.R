@@ -31,7 +31,7 @@ qtm(bhrd) + qtm(guandu)
 # creating first part of the map
 legend_title <- expression("Classes de uso do solo")     # legend
 map_g <- tm_shape(guandu) +                              # view a shape
-  tm_fill(col = "Uso", title = legend_title) +           # specify a reading column
+  tm_fill(col = "Uso", title = legend_title) +           # specify a column
   tm_borders()                                           # Add border layer
 map_g                                                    # print a map
 
@@ -108,7 +108,7 @@ tm_shape(guandu) +
 # INSET MAPS (mapas internos)
 ## The first step is to define the area of interest, which can be done by creating a new spatial object. To know the exact area of interest, I need to find the coordinantes range:
 qtm(bhrd) + qtm(guandu) + tm_grid()
-## the map shows me the area of may interest is between the coordinates xmin = 1820000, xmax = 1925000, ymin = 1249000, ymax = 1350000
+## the map shows me the area of my interest is between the coordinates xmin = 1820000, xmax = 1925000, ymin = 1249000, ymax = 1350000
 
 ##Creating a new spatial object
 library(sf)      # For st_bbox function
