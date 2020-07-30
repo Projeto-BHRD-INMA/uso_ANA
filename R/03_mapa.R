@@ -17,7 +17,7 @@ guandu <- readOGR(dsn = "./data/ANA", layer = "uph_guandu_uso2", encoding = 'UTF
 guandu@data
 
 # Basic polygon of bacia hidrográfica do rio Doce (Doce River basin)
-bhrd <- readOGR(dsn = "D:/01_INMA_BHRD/GIS", layer = "bhrd_Albers_dissol", encoding = 'UTF-8')
+bhrd <- readOGR(dsn = "./data", layer = "bhrd_Albers_dissol", encoding = 'UTF-8')
 
 #Using tmap package
 library(tmap)    # for static and interactive maps
