@@ -12,5 +12,7 @@
 
 *.docx
 
+*.qgz
+
 #ignorar pasta
 docs
